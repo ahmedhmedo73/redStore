@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row justify-content-between p-4">
+        <div class="col-md-2">
+            <h4>ALL Products</h4>
+        </div>
+        <div class="col-md-2">
+            <form action="">
+                <select id="programming">
+                    <option value="price">Sort By Price</option>
+                    <option value="popularity">Sort By Popularity</option>
+                    <option value="rating">Sort By Rating</option>
+                    <option value="sale">Sort By Sale</option>
+                </select>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="product col-md-3" *ngFor="let product of product" >
+            <a [routerLink]='["/productsdetails" , product.id]'>
+                <div class="image">
+                    <img [src]="product.image" />
+                </div>
+                <p class="title">{{product.title}}</p>
+                <div class="rating">
+                    <i class="fa fa-star" *ngIf="product.rating.rate>=1"></i>
+                    <i class="fa fa-star" *ngIf="product.rating.rate>=2"></i>
+                    <i class="fa fa-star" *ngIf="product.rating.rate>=3"></i>
+                    <i class="fa fa-star" *ngIf="product.rating.rate>=4"></i>
+                    <i class="fa fa-star" *ngIf="product.rating.rate>=5"></i>
+                    <i class="fa fa-star-half" *ngIf="product.rating.rate*10%10"></i>
+                </div>
+                <p>${{product.price}}</p>
+            </a>
+        </div>
+    </div>
+
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button><i class="fa fa-arrow-right"></i></button>
+</div>

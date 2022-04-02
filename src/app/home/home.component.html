@@ -1,0 +1,98 @@
+<header>
+  <div class="left">
+    <h2>
+      Give Your Workout <br />
+      A New Style!
+    </h2>
+    <p>
+      Success isn't always about greatness.it's about consistency. Cosistent
+      hard work gains success. Greatness will come.
+    </p>
+    <a class="btn">Explore Now <i class="fas fa-arrow-right"></i></a>
+  </div>
+  <div class="right">
+    <img src="../../assets/images/image1.png" alt="" />
+  </div>
+</header>
+<div class="category">
+  <img src="assets/images/category-1.jpg" alt="" />
+  <img src="assets/images/category-2.jpg" alt="" />
+  <img src="assets/images/category-1.jpg" alt="" />
+</div>
+<div class="featured">
+  <div class="titleF">
+    <h2>Featured Products</h2>
+  </div>
+  <div class="product" *ngFor="let product of featured">
+    <img [src]="product.src" />
+    <p class="title">{{product.name}}</p>
+    <div class="rating">
+      <i class="fa fa-star" *ngIf="product.rate>=1"></i>
+      <i class="fa fa-star" *ngIf="product.rate>=2"></i>
+      <i class="fa fa-star" *ngIf="product.rate>=3"></i>
+      <i class="fa fa-star" *ngIf="product.rate>=4"></i>
+      <i class="fa fa-star" *ngIf="product.rate>=5"></i>
+      <i class="fa fa-star-half" *ngIf="product.rate*10%10"></i>
+    </div>
+    <p>${{product.price}}</p>
+  </div>
+</div>
+<div class="featured">
+  <div class="titleF">
+    <h2>Latest Products</h2>
+  </div>
+  <div class="product" *ngFor="let product of latest">
+    <img [src]="product.src" />
+    <p class="title">{{product.name}}</p>
+    <div class="rating">
+      <i class="fa fa-star" *ngIf="product.rate>=1"></i>
+      <i class="fa fa-star" *ngIf="product.rate>=2"></i>
+      <i class="fa fa-star" *ngIf="product.rate>=3"></i>
+      <i class="fa fa-star" *ngIf="product.rate>=4"></i>
+      <i class="fa fa-star" *ngIf="product.rate>=5"></i>
+      <i class="fa fa-star-half" *ngIf="product.rate*10%10"></i>
+    </div>
+    <p>${{product.price}}</p>
+  </div>
+</div>
+<div class="exclusively">
+  <div class="left">
+    <img src="../../assets/images/exclusive.png" alt="">
+  </div>
+  <div class="content">
+    <p>Exclusively Available on Redstore</p>
+    <h2>Smart Band 4</h2>
+    <p>the Mi Band 4 features a 39.9% larger (than Mi band 3) AMOLED color full-touch display with adjustable
+      brightness. so everything is clear as can be.</p>
+    <a class="btn">Buy Now <i class="fas fa-arrow-right"></i></a>
+  </div>
+</div>
+<div class="review container d-flex align-items-center">
+    <div class="row justify-content-evenly align-content-end">
+      <div class="col-lg-3 col-md-5 col-sm-5 card mb-5 p-4" *ngFor="let review of review">
+        <i class="fa fa-quote-left"></i>
+        <p>{{review.review}}</p>
+        <div class="rating">
+          <i class="fa fa-star" *ngIf="review.rate>=1"></i>
+          <i class="fa fa-star" *ngIf="review.rate>=2"></i>
+          <i class="fa fa-star" *ngIf="review.rate>=3"></i>
+          <i class="fa fa-star" *ngIf="review.rate>=4"></i>
+          <i class="fa fa-star" *ngIf="review.rate>=5"></i>
+          <i class="fa fa-star-half" *ngIf="review.rate*10%10"></i>
+        </div>
+        <img [src]="review.src" > 
+        <h5>{{review.name}}</h5>
+      </div>
+      
+    </div>
+  
+</div>
+<div class="logos">
+  <div class="container">
+    <div class="row justify-content-center">
+       <div class="col-lg-2 col-md-4 col-sm-12 logo d-flex justify-content-center"  *ngFor="let logo of logo">
+         <img [src]="logo.src" >
+       </div>
+    </div>
+  </div>
+</div>

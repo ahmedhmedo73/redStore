@@ -1,0 +1,90 @@
+p {
+  margin: 0;
+  cursor: default;
+}
+.containerr {
+  margin-top: 100px;
+  padding: 0px 10%;
+  height: 100vh;
+}
+.head {
+  background-color: rgba(255, 68, 0, 0.836);
+  color: white;
+}
+.left {
+  img {
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+  }
+}
+.right {
+  input[type="number"] {
+    width: 40px;
+    height: 27px;
+    font-size: 13px;
+  }
+}
+.detail {
+  color: rgba(0, 0, 0, 0.671);
+  :last-child {
+    cursor: pointer;
+  }
+}
+.total {
+  border-top: 2px solid orangered;
+  .row {
+    margin-bottom: 10px;
+  }
+  .price {
+    text-align: end;
+  }
+  button {
+    border: 0;
+    background-color: orangered;
+    color: white;
+    border-radius: 20px;
+    padding: 5px 12px;
+    margin: 0;
+    transition: all 0.3s;
+    width: 190px;
+    i {
+      font-size: 12px;
+    }
+    &:hover {
+      background-color: rgb(122, 33, 1);
+    }
+  }
+  .procces {
+    .col-md-8 {
+      padding: 0 !important;
+    }
+  }
+}
+.orders {
+  max-height: 70vh;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.562);
+  }
+  overflow-x: hidden;
+  .left{
+    flex-wrap: wrap;
+  }
+  img {
+    min-width: 120px;
+    margin-right: 10px;
+  }
+  .detail{
+    min-width: 100px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .orders {
+    .left {
+    }
+  }
+}

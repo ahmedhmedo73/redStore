@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row details justify-content-center">
+        <div class="col-md-5">
+            <img [src]="src" alt="" class="w-100 mb-1">
+            <div class="parent-mini">
+                <img src="../../assets/images/gallery-1.jpg" class="mini" (click)="changeSrc($event)">
+                <img src="../../assets/images/gallery-2.jpg" class="mini" (click)="changeSrc($event)">
+                <img src="../../assets/images/gallery-3.jpg" class="mini" (click)="changeSrc($event)">
+                <img src="../../assets/images/gallery-4.jpg" class="mini" (click)="changeSrc($event)">
+            </div>
+        </div>
+        <div class="col-md-5 detail">
+            <form>
+                <p>Home/T-Shirt</p>
+                <h3>Red Printed T-Shirt by HRX</h3>
+                <p class="price">$50.00</p>
+                <select>
+                    <option *ngFor="let item of sizes"
+                    [selected]="item === size"
+                    [value]="item" >{{item}}</option>
+                </select><br>
+                <input type="number" min="1" max="100" value="1" step="1"> 
+                <input type="submit" value="Add To Cart">
+            </form>
+            <h4>PRODUCT DETAILS </h4>
+            <p>Give your summer wardrabe a style upgrade with the HRX Man's Active T-shirt Team it with a pair of shorts for your morning workout or a denims or a denims for an evening out with the guys.</p>
+        </div>
+    </div>
+    <div class="featured">
+        <div class="titleF">
+          <h2>Related Products</h2>
+        </div>
+        <a>view more</a>
+        <div class="product" *ngFor="let product of featured">
+          <img [src]="product.src" />
+          <p class="title">{{product.name}}</p>
+          <div class="rating">
+            <i class="fa fa-star" *ngIf="product.rate>=1"></i>
+            <i class="fa fa-star" *ngIf="product.rate>=2"></i>
+            <i class="fa fa-star" *ngIf="product.rate>=3"></i>
+            <i class="fa fa-star" *ngIf="product.rate>=4"></i>
+            <i class="fa fa-star" *ngIf="product.rate>=5"></i>
+            <i class="fa fa-star-half" *ngIf="product.rate*10%10"></i>
+          </div>
+          <p>${{product.price}}</p>
+        </div>
+    </div>
+</div>
